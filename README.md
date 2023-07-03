@@ -4,7 +4,7 @@
 
 부산정보산업진흥원에서 지원하는 클라우드 엔지니어 전문가 양성과정 6개월 동안 필요한 내용을 수시로 정리한 내용들과 프로젝트 및 환경설정파일입니다..
 
-### 취급 기술
+### 관련 기술
 
 <div align="center">
     <img src="https://img.shields.io/badge/Virtualbox-183A61?style=flat&logo=virtualbox&logoColor=white" />
