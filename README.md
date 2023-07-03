@@ -31,17 +31,17 @@
     
 </div>
 
-| Type | Component | Description |
-|------------|------------|------------|
-| 가상박스 | [tweetypie](tweetypie/server/README.md) | Core Tweet service that handles the reading and writing of Tweet data. |
-| 시스코 | [unified-user-actions](unified_user_actions/README.md) | Real-time stream of user actions on Twitter. |
-| 리눅스 | [user-signal-service](user-signal-service/README.md) | Centralized platform to retrieve explicit (e.g. likes, replies) and implicit (e.g. profile visits, tweet clicks) user signals. |
-| 우분투 | [SimClusters](src/scala/com/twitter/simclusters_v2/README.md) | Community detection and sparse embeddings into those communities. |
-| 깃 | [TwHIN](https://github.com/twitter/the-algorithm-ml/blob/main/projects/twhin/README.md) | Dense knowledge graph embeddings for Users and Tweets. |
-| 깃허브 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
-| 젠킨스 | [representation-manager](representation-manager/README.md) | Service to retrieve embeddings (i.e. SimClusers and TwHIN). |
-| AWS | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
-| 베이그란트 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
-| 테라폼 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
-| 엔서블 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
+| Type | Description |
+|------------|------------|
+| [가상박스](tweetypie/server/README.md) | 가상머신 생성 |
+| [시스코](twml/README.md) | 네트워크 |
+| [리눅스](twml/README.md) | 운영체제 |
+| [우분투](twml/README.md) | 운영체제 |
+| [깃](twml/README.md) | 버전관리 |
+| [깃허브](twml/README.md) | 원격저장소 |
+| [젠킨스](twml/README.md) | 빠른 개발, 배포 |
+| [AWS](twml/README.md) | 클라우드 |
+| [베이그란트](twml/README.md) | Iac |
+| [테라폼](twml/README.md) | Iac |
+| [엔서블](twml/README.md) | Iac |
 
