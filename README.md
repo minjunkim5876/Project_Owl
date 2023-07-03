@@ -33,18 +33,18 @@
 
 | Type | Component | Description |
 |------------|------------|------------|
-| Data | [tweetypie](tweetypie/server/README.md) | Core Tweet service that handles the reading and writing of Tweet data. |
-|      | [unified-user-actions](unified_user_actions/README.md) | Real-time stream of user actions on Twitter. |
-|      | [user-signal-service](user-signal-service/README.md) | Centralized platform to retrieve explicit (e.g. likes, replies) and implicit (e.g. profile visits, tweet clicks) user signals. |
-| Model | [SimClusters](src/scala/com/twitter/simclusters_v2/README.md) | Community detection and sparse embeddings into those communities. |
-|       | [TwHIN](https://github.com/twitter/the-algorithm-ml/blob/main/projects/twhin/README.md) | Dense knowledge graph embeddings for Users and Tweets. |
-|       | [trust-and-safety-models](trust_and_safety_models/README.md) | Models for detecting NSFW or abusive content. |
-|       | [real-graph](src/scala/com/twitter/interaction_graph/README.md) | Model to predict the likelihood of a Twitter User interacting with another User. |
-|       | [tweepcred](src/scala/com/twitter/graph/batch/job/tweepcred/README) | Page-Rank algorithm for calculating Twitter User reputation. |
-|       | [recos-injector](recos-injector/README.md) | Streaming event processor for building input streams for [GraphJet](https://github.com/twitter/GraphJet) based services. |
-|       | [graph-feature-service](graph-feature-service/README.md) | Serves graph features for a directed pair of Users (e.g. how many of User A's following liked Tweets from User B). |
-|       | [topic-social-proof](topic-social-proof/README.md) | Identifies topics related to individual Tweets. |
-|       | [representation-scorer](representation-scorer/README.md) | Compute scores between pairs of entities (Users, Tweets, etc.) using embedding similarity. |
+| 가상박스 | [tweetypie](tweetypie/server/README.md) | Core Tweet service that handles the reading and writing of Tweet data. |
+| 시스코 | [unified-user-actions](unified_user_actions/README.md) | Real-time stream of user actions on Twitter. |
+| 리눅스 | [user-signal-service](user-signal-service/README.md) | Centralized platform to retrieve explicit (e.g. likes, replies) and implicit (e.g. profile visits, tweet clicks) user signals. |
+| 우분투 | [SimClusters](src/scala/com/twitter/simclusters_v2/README.md) | Community detection and sparse embeddings into those communities. |
+| 깃 | [TwHIN](https://github.com/twitter/the-algorithm-ml/blob/main/projects/twhin/README.md) | Dense knowledge graph embeddings for Users and Tweets. |
+| 깃허브 | [trust-and-safety-models](trust_and_safety_models/README.md) | Models for detecting NSFW or abusive content. |
+| 엔진엑스 | [real-graph](src/scala/com/twitter/interaction_graph/README.md) | Model to predict the likelihood of a Twitter User interacting with another User. |
+| 노드 | [tweepcred](src/scala/com/twitter/graph/batch/job/tweepcred/README) | Page-Rank algorithm for calculating Twitter User reputation. |
+| 마이에스큐엘 | [recos-injector](recos-injector/README.md) | Streaming event processor for building input streams for [GraphJet](https://github.com/twitter/GraphJet) based services. |
+| 몽고디비 | [graph-feature-service](graph-feature-service/README.md) | Serves graph features for a directed pair of Users (e.g. how many of User A's following liked Tweets from User B). |
+| 아파치 | [topic-social-proof](topic-social-proof/README.md) | Identifies topics related to individual Tweets. |
+| 톰켓 | [representation-scorer](representation-scorer/README.md) | Compute scores between pairs of entities (Users, Tweets, etc.) using embedding similarity. |
 | Software framework | [navi](navi/README.md) | High performance, machine learning model serving written in Rust. |
 |                    | [product-mixer](product-mixer/README.md) | Software framework for building feeds of content. |
 |                    | [timelines-aggregation-framework](timelines/data_processing/ml_util/aggregation_framework/README.md) | Framework for generating aggregate features in batch or real time. |
@@ -52,56 +52,10 @@
 |                    | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
  
 
-## 가상박스
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
-
-## 시스코
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
-
-## 리눅스
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
-
-## 우분투
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
 
 
-## 깃
 
-### 상세설명
 
-Explain what these tests test and why
-
-```
-
-```
 
 ## 깃허브
 
