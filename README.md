@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=rounded&color=0B0B61&height=180&section=header&text=프로젝트_올빼미&fontSize=90&fontColor=D7DF01)
+# 프로젝트 올빼미
 
 ## 개요
 
@@ -44,6 +44,4 @@
 | 베이그란트 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
 | 테라폼폼 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
 | 엔서블 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
- 
 
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=footer)
