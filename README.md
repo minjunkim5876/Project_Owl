@@ -38,90 +38,12 @@
 | 리눅스 | [user-signal-service](user-signal-service/README.md) | Centralized platform to retrieve explicit (e.g. likes, replies) and implicit (e.g. profile visits, tweet clicks) user signals. |
 | 우분투 | [SimClusters](src/scala/com/twitter/simclusters_v2/README.md) | Community detection and sparse embeddings into those communities. |
 | 깃 | [TwHIN](https://github.com/twitter/the-algorithm-ml/blob/main/projects/twhin/README.md) | Dense knowledge graph embeddings for Users and Tweets. |
-| 깃허브 | [trust-and-safety-models](trust_and_safety_models/README.md) | Models for detecting NSFW o스 | [timelines-aggregation-framework](timelines/data_processing/ml_util/aggregation_framework/README.md) | Framework for generating aggregate features in batch or real time. |
+| 깃허브 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
 | 젠킨스 | [representation-manager](representation-manager/README.md) | Service to retrieve embeddings (i.e. SimClusers and TwHIN). |
-|                    | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
+| 아마존웹서비스 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
+| 베이그란트 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
+| 테라폼폼 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
+| 엔서블 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
  
-
-
-## 파이썬
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
-
-## 도커
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
-
-## 쿠버네티스
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
-
-## 젠킨스
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
-
-## 아마존웹서비스
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
-
-## 베이그란트
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
-
-## 테라폼
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
-
-## 엔서블
-
-### 상세설명
-
-Explain what these tests test and why
-
-```
-
-```
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=footer)
