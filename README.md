@@ -42,6 +42,6 @@
 | 젠킨스 | [representation-manager](representation-manager/README.md) | Service to retrieve embeddings (i.e. SimClusers and TwHIN). |
 | 아마존웹서비스 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
 | 베이그란트 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
-| 테라폼폼 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
+| 테라폼 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
 | 엔서블 | [twml](twml/README.md) | Legacy machine learning framework built on TensorFlow v1. |
 
