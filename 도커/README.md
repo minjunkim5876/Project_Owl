@@ -14,4 +14,4 @@
 
 ### 도커명령
 
-![스크린샷(4)](https://github.com/minjunkim5876/Project_Owl/assets/110665712/5fea752e-0a7f-498e-8c16-42bddc219642)
+
