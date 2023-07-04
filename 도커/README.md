@@ -11,4 +11,5 @@
     7. sudo apt-get update     
     8. sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
     9. docker -v
-    ![스크린샷(4)](https://github.com/minjunkim5876/Project_Owl/assets/110665712/a2b68f07-b6d4-4ad0-b1bd-39c33c4ead32)
+
+![스크린샷(4)](https://github.com/minjunkim5876/Project_Owl/assets/110665712/a2b68f07-b6d4-4ad0-b1bd-39c33c4ead32)
