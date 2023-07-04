@@ -13,4 +13,5 @@
     9. docker -v
 
 ### 도커명령
-![스크린샷(4)](https://github.com/minjunkim5876/Project_Owl/assets/110665712/14a1d7c4-e0c4-49a7-abc0-1012432d5bfd)
+
+![스크린샷(4)](https://github.com/minjunkim5876/Project_Owl/assets/110665712/5fea752e-0a7f-498e-8c16-42bddc219642)
