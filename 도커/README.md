@@ -50,10 +50,9 @@
         sudo apt-get update -y
         sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
         sudo usermod -a -G docker vagrant
-        docker run -it -d -p 80:80 --name web-server httpd
-        docker cp /vagrant/env/sample2/ web-server:/usr/local/apache2/htdocs
-        docker run -it -d -p 8080:80 --name nginx-server nginx
+        docker run -it -d -p 80:80 --name nginx-server nginx
+        docker cp /vagrant/env/sample2/ nginx-server:/usr/share/nginx/html
+
         SCRIPT
     end
     end
-
