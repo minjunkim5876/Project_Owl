@@ -61,4 +61,6 @@
     2.볼륨마운트 도커 시스템에서 간접 관리(/var/lib/docker/volumes)
     3.tmpfs 메모리에만 저장, 호스트에 저장안함,성능이 좋고 빠름(시스템 메모리)
     4.볼륨마운트 커맨드
+    5.볼륨 크리에이트 하고 컨테이너에 마운트하기
+    6.docker run -d -p (8080:80) -v web_src_vol:/usr/local/apache2/htdocs --name 컨테이너이름 이미지(httpd)
 
