@@ -19,7 +19,7 @@
     3. watch -n 1 docker ps -a (터미널에서 변경사항 수시확인)
     4. docker run --restart (재시작 정책설정)
     5. docker stats (서버자원 사용량 확인)
-    6. docker run -it -d -v --name 이름 --restart=설정 컨테이너이름
+    6. docker run -it -d -v --name 이름 --restart=설정 컨테이너이름  
 
 ### 베이그란트로 손쉽게 초기 세팅 해보기
 
