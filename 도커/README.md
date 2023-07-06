@@ -53,6 +53,6 @@
         docker run -it -d -p 80:80 --name nginx-server nginx
         docker cp /vagrant/env/sample2/ nginx-server:/usr/share/nginx/html
 
-### 베이그란트로 손쉽게 초기 세팅 해보기
+### 도커허브 로그인 토큰 등록
     1.env/docker_token 파일을 생성하여 토큰번호를 등록 합시다       
 
