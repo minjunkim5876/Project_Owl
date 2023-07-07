@@ -69,4 +69,7 @@
     2.베이그란트로 가상머신 2개 만들었음
     3.ocker volume create --driver vieux/sshfs -o sshcmd=sshfs@192.168.33.20:/home/sshfs -o password=qwerasdfzxcv sshfs_vol1 sshfs_vol1
     4.docker run -it -v sshfs_vol1:/usr/local/apache2 --name t1 httpd /bin/bash
+    5.sudo vi /etc/ssh/sshd_config(PasswordAuthentication yes)
+    6.sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+    7.sudo systemctl restart sshd
 

@@ -14,6 +14,9 @@ Vagrant.configure("2") do |config|
     sshfs.vm.provision "shell", inline: <<-SCRIPT
       sudo useradd -m -s /bin/bash sshfs
       echo sshfs:qwerasdfzxcv | sudo chpasswd
+      sudo cp -r /vagrant/env/sample3/* /home/sshfs
+      sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+      sudo systemctl restart sshd
     SCRIPT
   end
 
@@ -24,8 +27,7 @@ Vagrant.configure("2") do |config|
       vb.cpus = 4
       vb.memory = 8192
     end
-    ubuntu.vm.network "forwarded_port", guest: 8080, host: 80, host_ip: "127.0.0.1"
-    ubuntu.vm.network "forwarded_port", guest: 8081, host: 80, host_ip: "127.0.0.2"
+    ubuntu.vm.network "forwarded_port", guest: 80, host: 80
     ubuntu.vm.network "private_network", ip: "192.168.33.200"
     ubuntu.vm.provision "shell", inline: <<-SCRIPT
       sudo apt-get update -y
@@ -40,14 +42,10 @@ Vagrant.configure("2") do |config|
       sudo apt-get update -y
       sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
       sudo usermod -a -G docker vagrant
-      docker login -u minjun5876 --password-stdin < vagrant/env/docker_token
-      docker volume create --label service=web --label creator=hedgehoon web_src_vol
-      sudo cp -r /vagrant/env/sample3/* /var/lib/docker/volumes/web_src_vol/_data/
-      docker run -d -p 8080:80 -v web_src_vol:/usr/local/apache2/htdocs --name web-server1 httpd
-      docker run -d -p 8081:80 -v web_src_vol:/usr/share/nginx/html --name web-server2 nginx	
+      docker login -u minjun5876 --password-stdin < vagrant/env/docker_token	
       docker plugin install --grant-all-permissions vieux/sshfs
-      docker volume create --driver vieux/sshfs -o sshcmd=sshfs@192.168.33.20:/home/sshfs -o password=qwerasdfzxcv sshfs_vol1 sshfs_vol1
-      docker run -it -v sshfs_vol1:/usr/share/nginx/html --name task1 nginx /bin/bash
+      docker volume create --driver vieux/sshfs -o sshcmd=sshfs@192.168.33.250:/home/sshfs -o password=qwerasdfzxcv -o allow_other sshfs_vol1
+      docker run -it -d -p 80:80 -v sshfs_vol1:/usr/share/nginx/html --name task1 nginx /bin/bash
     SCRIPT
   end
 end
