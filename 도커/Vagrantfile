@@ -4,8 +4,8 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
 
   config.vm.define "sshfs" do |sshfs|
-    ubuntu.vm.hostname = "sshfs-server"
-    ubuntu.vm.provider "virtualbox" do |vb|
+    sshfs.vm.hostname = "sshfs-server"
+    sshfs.vm.provider "virtualbox" do |vb|
       vb.name = "sshfs-server"
       vb.cpus = 1
       vb.memory = 2048
@@ -16,6 +16,14 @@ Vagrant.configure("2") do |config|
       echo sshfs: qwerasdfzxcv | sudo chpasswd
     SCRIPT
   end
+
+  config.vm.define "ubuntu" do |ubuntu|
+    ubuntu.vm.hostname = "mz-server"
+    ubuntu.vm.provider "virtualbox" do |vb|
+      vb.name = "docker-server"
+      vb.cpus = 4
+      vb.memory = 8192
+    end
     ubuntu.vm.network "forwarded_port", guest: 8080, host: 80, host_ip: "127.0.0.1"
     ubuntu.vm.network "forwarded_port", guest: 8081, host: 80, host_ip: "127.0.0.2"
     ubuntu.vm.network "private_network", ip: "192.168.33.10"
