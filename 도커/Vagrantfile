@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
       sudo apt-get update -y
       sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
       sudo usermod -a -G docker vagrant
-      docker login -u minjun5876 --password-stdin < vagrant/env/docker_token	
+      docker login -u minjun5876 --password-stdin < /vagrant/env/docker_token	
       docker plugin install --grant-all-permissions vieux/sshfs
       docker volume create --driver vieux/sshfs -o sshcmd=sshfs@192.168.33.250:/home/sshfs -o password=qwerasdfzxcv -o allow_other sshfs_vol1
       docker run -it -d -p 80:80 -v sshfs_vol1:/usr/share/nginx/html --name task1 nginx /bin/bash
