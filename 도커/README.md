@@ -64,3 +64,6 @@
     5.볼륨 크리에이트 하고 컨테이너에 마운트하기
     6.docker run -d -p (8080:80) -v web_src_vol:/usr/local/apache2/htdocs --name 컨테이너이름 이미지(httpd)
 
+### 베이그란트
+    1.베이그란트 파일에 서버 여러개 생성 설정해노으면 1개만 생성가능 vagrant up 서버이름
+
