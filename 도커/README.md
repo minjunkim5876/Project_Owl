@@ -66,4 +66,7 @@
 
 ### 베이그란트
     1.베이그란트 파일에 서버 여러개 생성 설정해노으면 1개만 생성가능 vagrant up 서버이름
+    2.베이그란트로 가상머신 2개 만들었음
+    3.ocker volume create --driver vieux/sshfs -o sshcmd=sshfs@192.168.33.20:/home/sshfs -o password=qwerasdfzxcv sshfs_vol1 sshfs_vol1
+    4.docker run -it -v sshfs_vol1:/usr/local/apache2 --name t1 httpd /bin/bash
 
