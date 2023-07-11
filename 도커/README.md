@@ -64,3 +64,29 @@
     5.볼륨 크리에이트 하고 컨테이너에 마운트하기
     6.docker run -d -p (8080:80) -v web_src_vol:/usr/local/apache2/htdocs --name 컨테이너이름 이미지(httpd)
 
+### 도커 허브 이미지를 관리해보자
+    1.docker tag ubuntu:20.04 minjun5876/myrepo:ubuntu20.04(받은 이미지 이름변경)
+    2.docker run -d -p 5000:5000 --restart=always --name image_repo registry(프라이빗 도커헙 생성)
+    3.sudo vi /etc/docker/daemon.json 수정하기
+    # docker tag minjun5876/apache2:latest localhost:5000/apache2:latest
+    4.sudo vi /etc/hosts 수정하기
+    #127.0.0.1       localhost
+     192.168.33.100  repo.docker.com
+    # sudo systemctl restart docker
+    6.sudo vi /etc/docker/daemon.json
+    #{
+        "insecure-registries" : ["http://localhost:5000", "http://repo.docker.com:5000"]     
+    }
+    # sudo systemctl restart docker
+    7.docker tag localhost:5000/apache2:latest repo.docker.com:5000/apache2:latest
+    # docker push repo.docker.com:5000/apache2(아이피도 가능)
+    8.curl http://repo.docker.com:5000/v2/_catalog curl http://repo.docker.com:5000/v2/apache2/tags/list(프라이빗 레포확인)
+    9.개인용 레포지터리를 만들면 키를 두개 만들어서 관리하고 외부에서 접속하는 서버는 공개키가 필요함.
+    10./etc/hosts에 도메인 등록 (192.168.33.200  dock.repo.co.kr)
+    11.sudo openssl req -newkey rsa:4096 -nodes -sha256 -keyout mydomain.key -addext "subjectAltName = DNS:repo.docker.com" -x509 -days 365 -out mydomain.crt
+    Generating a RSA private key (키생성)
+    12. mkdir certs ,sudo mv mydomain.* certs/ 키 이동
+    13. sudo mkdir -p /etc/docker/certs.d/repo.docker.com 디렉토리생성
+    14.sudo cp certs/mydomain.crt /etc/docker/certs.d/repo.docker.com/mydomain.crt
+    15.sudo cp certs/mydomain.crt /usr/local/share/ca-certificates/repo.docker.com.crt
+    16.docker run -d --restart=always --name image_repo -v /home/vagrant/certs:/certs -e REGISTRY_HTTP_ADDR=0.0.0.0:443 -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/mydomain.crt -e REGISTRY_HTTP_TLS_KEY=/certs/mydomain.key -p 443:443 registry
