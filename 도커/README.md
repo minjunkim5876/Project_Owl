@@ -83,10 +83,15 @@
     8.curl http://repo.docker.com:5000/v2/_catalog curl http://repo.docker.com:5000/v2/apache2/tags/list(프라이빗 레포확인)
     9.개인용 레포지터리를 만들면 키를 두개 만들어서 관리하고 외부에서 접속하는 서버는 공개키가 필요함.
     10./etc/hosts에 도메인 등록 (192.168.33.200  dock.repo.co.kr)
-    11.sudo openssl req -newkey rsa:4096 -nodes -sha256 -keyout mydomain.key -addext "subjectAltName = DNS:repo.docker.com" -x509 -days 365 -out mydomain.crt
-    Generating a RSA private key (키생성)
+    11.sudo openssl req -newkey rsa:4096 -nodes -sha256 -keyout dock.repo.co.kr.key -subj "/C=KR/ST=Korea/L=Busan/O=mzcloud/OU=mzcloud/CN=dock.repo.co.kr/emailAddress=mj@mz.co.kr" -addext "subjectAltName = DNS:dock.repo.co.kr" -x509 -days 365 -out dock.repo.co.kr.crt (키생성)
     12. mkdir certs ,sudo mv mydomain.* certs/ 키 이동
     13. sudo mkdir -p /etc/docker/certs.d/repo.docker.com 디렉토리생성
     14.sudo cp certs/mydomain.crt /etc/docker/certs.d/repo.docker.com/mydomain.crt
     15.sudo cp certs/mydomain.crt /usr/local/share/ca-certificates/repo.docker.com.crt
     16.docker run -d --restart=always --name image_repo -v /home/vagrant/certs:/certs -e REGISTRY_HTTP_ADDR=0.0.0.0:443 -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/mydomain.crt -e REGISTRY_HTTP_TLS_KEY=/certs/mydomain.key -p 443:443 registry
+    17.scp -i /vagrant/.vagrant/machines/dock1/virtualbox/private_key cets/dock.repo.co.kr.crt vagrant@192.168.33.100:/home/vagrant
+    18.cp /vagrant/.vagrant/machines/dock1/virtualbox/private_key ~/dock1.key
+    19.sudo chmod 600 dock1.key
+    20.scp dock1.key certs/dock.repo.co.kr.crt vagrant@192.168.33.100:/home/vagrant
+    21.scp -i dock1.key certs/dock.repo.co.kr.crt  vagrant@192.168.33.100:/home/vagrant dock.repo.co.kr.crt
+    22.docker run -d --restart=always --name image_repo -v /home/vagrant/certs:/certs -e REGISTRY_HTTP_ADDR=0.0.0.0:443 -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/dock.repo.co.kr.crt -e REGISTRY_HTTP_TLS_KEY=/certs/dock.repo.co.kr -p 443:443 registry
